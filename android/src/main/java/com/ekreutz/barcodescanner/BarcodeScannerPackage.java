@@ -18,22 +18,22 @@ public class BarcodeScannerPackage implements ReactPackage {
         barcodeScannerManager = new BarcodeScannerManager();
     }
 
-    @Override
+    // @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return Collections.emptyList();
     }
 
-    // @Override
-    // public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
-    //     return Arrays.<ViewManager>asList(
-    //         barcodeScannerManager
-    //     );
-    // }
+    @Override
+    public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
+        return Arrays.<ViewManager>asList(
+            barcodeScannerManager
+        );
+    }
 
-    // @Override
-    // public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-    //     return Arrays.<NativeModule>asList(
-    //         new BarcodeScannerModule(reactContext, barcodeScannerManager)
-    //     );
-    // }
+    @Override
+    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
+        return Arrays.<NativeModule>asList(
+            new BarcodeScannerModule(reactContext, barcodeScannerManager)
+        );
+    }
 }
